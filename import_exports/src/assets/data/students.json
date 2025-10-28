@@ -1,0 +1,9 @@
+[
+    {"name": "tom", 
+        "role": "cr"
+    },
+    {
+        "name":"jerry",
+        "role":"student"
+    }
+]
