@@ -9,10 +9,10 @@ export class EventsComp extends Component {
         inputTag:"",
         submittedValue:""
      }
-    //  console.log(this)
-    //  this.morning = this.goodMorning.bind(this)
-    //  this.input = this.inputChange.bind(this)
-    //  this.inputClick = this.inputsubmit.bind(this)
+     console.log(this)
+     this.morning = this.goodMorning.bind(this)
+     this.input = this.inputChange.bind(this)
+     this.inputClick = this.inputsubmit.bind(this)
     }
 
     changeGreetings(){
@@ -21,16 +21,16 @@ export class EventsComp extends Component {
         
     }
 
-    // goodMorning(){
-    //     this.setState({greeting:"good morning"})
-    // }
-    // inputsubmit(){
-    //     this.setState({submittedValue:this.state.inputTag})
-    // }
+    goodMorning(){
+        this.setState({greeting:"good morning"})
+    }
+    inputsubmit(){
+        this.setState({submittedValue:this.state.inputTag})
+    }
 
-    // inputChange(e){
-    //    this.setState({inputTag: e.target.value})
-    // }
+    inputChange(e){
+       this.setState({inputTag: e.target.value})
+    }
 
    
 
@@ -41,11 +41,11 @@ export class EventsComp extends Component {
             <p>Events</p>
             <h5>{this.state.greeting}</h5>
             <button onClick={this.greet}>say good afternoon</button>
-            {/* <button onClick={this.morning} > say good morning</button>
+            <button onClick={this.morning} > say good morning</button>
             <hr/>
             <input type="text" placeholder="enter something...." onChange={this.input}/>
             <p>{this.state.submittedValue}</p>
-            <button onClick={this.inputClick}>enter</button> */}
+            <button onClick={this.inputClick}>enter</button>
         </div>
     }
 }
