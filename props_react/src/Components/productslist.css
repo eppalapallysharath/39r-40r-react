@@ -1,0 +1,22 @@
+.main-container {
+    border: 1px solid black;
+    margin: 20px;
+    background-color: aquamarine;
+    box-shadow: 0 0 15px tomato;
+}
+
+.products-list-container{
+    display: grid;
+    grid-template-columns: 13rem 13rem 13rem 13rem 13rem;
+    justify-content: space-evenly;
+}
+
+.product-card{
+    width: 10rem;
+    height: 15rem;
+    text-align: center;
+}
+
+.product-card > img {
+    width: 5rem;
+}
