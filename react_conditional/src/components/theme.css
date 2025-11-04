@@ -1,0 +1,18 @@
+.dark{
+    color: whitesmoke;
+    background-color: black;
+}
+
+.light{
+    color: black;
+    background-color:white ;
+}
+
+#hdark {
+
+    color: maroon;
+}
+
+#hlight{
+    color: tomato;
+}
