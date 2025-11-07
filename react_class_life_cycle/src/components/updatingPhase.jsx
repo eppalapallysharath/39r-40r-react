@@ -38,27 +38,26 @@ export class ExampleUpdate extends Component {
     this.fetchProducts();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(previousProps, previousState) {
     console.log("component did update")
-    // console.log("previous state",prevState)
-    // console.log("current state",this.state)
-    if (prevState.count !== this.state.count) {
+    console.log("previous state", previousState)
+    if (previousState.count !== this.state.count) {
       this.setState({
         numberCheck: this.state.count % 2 === 0 ? "even number" : "odd number",
       });
     }
-    if(prevState.category !== this.state.category){
-        console.log(this.state.category)
-        const newProducts = this.state.productsData.filter((item) => {
-        if (this.state.category === "all") {
-          return item;
-        } else {
-          return item.category === this.state.category;
-        }
-      });
-      console.log(newProducts)
-      this.setState({filterData:newProducts})
-    }
+    // if(previousState.category !== this.state.category){
+    //     // console.log(this.state.category)
+    //     const newProducts = this.state.productsData.filter((item) => {
+    //     if (this.state.category === "all") {
+    //       return item;
+    //     } else {
+    //       return item.category === this.state.category;
+    //     }
+    //   });
+    //   console.log(newProducts)
+    //   this.setState({filterData:newProducts})
+    // }
   }
 
   category(value) {
@@ -71,21 +70,21 @@ export class ExampleUpdate extends Component {
   }
 
   render() {
-    console.log(this.state.filterData)
+    // console.log(this.state.filterData)
     return (
       <div>
         <h1>updating phase</h1>
-        {/* <p>Count {this.state.count}</p>
+        <p>Count {this.state.count}</p>
             <p>{this.state.numberCheck}</p>
             <button onClick={this.inc} >+</button>
-            <button onClick={this.dec}>-</button> */}
-        <select onChange={(event)=>this.handleSelectCategory(event)}>
+            <button onClick={this.dec}>-</button> 
+        {/* <select onChange={(event)=>this.handleSelectCategory(event)}>
             <option value="all">All</option>
             <option value="men's clothing">mens</option>
             <option value="women's clothing">womens</option>
             <option value="electronics">electronics</option>
             <option value="jewelery">jewelery</option>
-        </select>
+        </select> */}
 
 
         {/* <button onClick={() => this.category("all")}>All</button>
@@ -99,7 +98,7 @@ export class ExampleUpdate extends Component {
         <button onClick={() => this.category("women's clothing")}>
           women's clothing
         </button> */}
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "100%",
@@ -114,7 +113,7 @@ export class ExampleUpdate extends Component {
               <p>{item.title}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     );
   }

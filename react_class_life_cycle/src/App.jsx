@@ -53,12 +53,26 @@
 // export default App
 import { Component } from "react";
 import {ExampleUpdate} from "./components/updatingPhase"
-
+import {DemoUnmounting} from "./components/unmounting"
+import {Function1comp, Function2comp, Function3comp} from "./components/funcomp1"
 class App extends Component{
+  constructor(){
+    super();
+    this.state = {show:false}
+  }
+
+  toggle(){
+    this.setState({show:!this.state.show})
+  }
 
   render(){
     return<div>
       <p>App Component</p>
+      <button onClick={()=>this.toggle()}>{this.state.show ? "hide":"show"}</button>
+      {/* {this.state.show && <DemoUnmounting/>} */}
+      {/* <Function1comp/>
+      <Function2comp/>
+      <Function3comp name="sharath" last= "tom"/> */}
       <ExampleUpdate/>
     </div>
   }
