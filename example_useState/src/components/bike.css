@@ -1,0 +1,11 @@
+.bike-started{
+    text-align: center;
+    text-decoration: line-through;
+    background-color: blueviolet;
+}
+
+.bike-stopped{
+    text-align: end;
+    text-decoration: underline;
+    background-color: black;
+}
