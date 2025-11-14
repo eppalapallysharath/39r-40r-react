@@ -21,6 +21,7 @@ export const ExampleUnmounting = () => {
   useEffect(() => {
     const controler = new AbortController();
     const signal = controler.signal;
+    console.log(signal)
     // const t = setInterval(()=>{console.log("hi")  }, 2000)
     fetch(signal);
     products(signal)
