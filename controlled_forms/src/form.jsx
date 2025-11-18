@@ -46,24 +46,35 @@ export function Form() {
   }
 
   const handleFullName = (e) =>{
-    // if(e.target.value === e.target.value.toLowerCase() ){
-    //     setFullName(e.target.value)
-    //     setErrorFullName("")
-    // }else{
-    //     setErrorFullName("please enter small letters a-z")
-    // }
-    const str = e.target.value;
-    console.log(str)
-    for(let i = 0; i <=str.length; i++ ){
-        console.log(str[i])
-        console.log(str.charCodeAt(i)) 
-        if(str.charCodeAt(i)>= 97 && str.charCodeAt(i) <= 122){
-            setFullName(e.target.value)
-        }else{
-            setErrorFullName("enter only small letters only")
-        }
+    const {value} = e.target;
+    for(let v of value ){
+      const code = v.charCodeAt(0)
+      const char = code >= 97 && code <= 122 
+      if(!char){
+        setErrorFullName("enter only small letters")
+        return;
+      }
     }
+
+    setFullName(value)
+    setErrorFullName("")
   }
+
+
+  const handleEmail = (e) =>{
+     const {value} = e.target
+     setEmail(e.target.value)
+     const check = value.split("@")
+
+    
+     if( check[check.length -1] == "gmail.com"){
+      console.log("value")
+      setErrorEmail("")
+    }else{
+       setErrorEmail("only gmail accepted here @gmail.com")
+     }
+  }
+
 
   return (
     <form onSubmit={submit}>
@@ -74,14 +85,15 @@ export function Form() {
           type="text"
           name="full name"
           onChange={handleFullName} 
-        //   value={fullName}
+          value={fullName}
         />
         <p style={{ color: "red" }}>{errorFullName}</p>
         <p>Email</p>
         <input
           type="email"
           name="email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) =>handleEmail(e) }
+          // value={email}
         />
         <p style={{ color: "red" }}>{errorEmail}</p>
         <p>Age</p>
