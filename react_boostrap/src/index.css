@@ -1,0 +1,28 @@
+/* li{
+    list-style-type: square;
+    text-decoration: underline
+}
+
+div{
+    margin: 1rem;
+    box-shadow:  0 0 5px blue;
+}
+
+p{
+    color: aquamarine;
+}
+
+.dark-theme{
+    color:  white;
+    background-color: black;
+}
+
+.light-theme{
+    color: blanchedalmond;
+    background-color: cadetblue;
+}
+
+.loginbtn{
+     color: yellowgreen;
+     background-image: linear-gradient(to right, red , yellow);
+} */
